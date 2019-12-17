@@ -242,10 +242,17 @@ function sortCarInventory(inventory) {
 */
 function getModelYears(inventory) {
   /* code here */
-  const modelYearsArray= [];
-  inventory.forEach(function(car_year){
-    modelYearsArray.push(Object.keys(car_year))
-  });
+  let modelYearsArray= [];
+  // inventory.forEach(function(car_year){
+    
+  //   modelYearsArray.push(Object.keys(car_year))
+  // });
+  // return modelYearsArray;
+  
+  for (let i=0; i<inventory.length; i++){
+    modelYearsArray.push(inventory[i].car_year);
+   
+  }
   return modelYearsArray;
 }
 
@@ -263,6 +270,20 @@ function getModelYears(inventory) {
 */
 function getOlderCars(inventory, maxYear) {
   /* code here */
+  let olderModelArray= [];
+  // inventory.forEach(function(car_year){
+    
+  //   modelYearsArray.push(Object.keys(car_year))
+  // });
+  // return modelYearsArray;
+  
+  for (let i=0; i<inventory.length; i++){
+    if(inventory[i].car_year <= maxYear){
+      olderModelArray.push(inventory[i]);
+    }
+
+  }
+  return olderModelArray;
 }
 
 /**
